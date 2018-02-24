@@ -12,6 +12,6 @@
 use think\Route;
 
 Route::group('index', [
-    'getNoun' => [ 'app/index/getNoun', [ 'method' => 'get' ] ],
+    'getNoun' => [ 'index/index/getNoun', [ 'method' => 'get' ] ],
 ]);
 

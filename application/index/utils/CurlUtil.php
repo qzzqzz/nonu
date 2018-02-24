@@ -115,8 +115,6 @@ class CurlUtil {
             $url .= (is_string($vars)) ? $vars : http_build_query($vars, '', '&');
         }
 
-        $file = new LogsService(LOGS_PATH.'/curl_get/' . date('Y-m-d'));
-        $file->info($url);
         return $this->request('GET', $url);
     }
 

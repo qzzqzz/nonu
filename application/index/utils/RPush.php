@@ -2,10 +2,6 @@
 
 namespace app\index\utils;
 
-use app\chat\consts\ConfigConst;
-use Think\Log;
-use think\Cache;
-
 
 /**
  * Created by PhpStorm.
@@ -27,8 +23,7 @@ class RPush
             'key'   => APP_KEY,
             'stock' => $stock
         );
-        $data          = json_encode($arr);
-        $curl          = new \app\index\utils\CurlUtil();
+        $curl          = new CurlUtil();
         $curl->headers = [
             "Accept"        => "application/json",
             "Content-Type"  => "application/json;charset=utf-8",
@@ -38,7 +33,7 @@ class RPush
             "CURLOPT_SSL_VERIFYHOST" => 2,
         ];
         $url           = $this->buildSendUrl();
-        $response      = $curl->get($url, $data);
+        $response      = $curl->get($url, $arr);
         return $response;
     }
 
