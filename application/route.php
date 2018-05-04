@@ -13,5 +13,7 @@ use think\Route;
 
 Route::group('index', [
     'getNoun' => [ 'index/index/getNoun', [ 'method' => 'get' ] ],
+    'getTest' => [ 'index/index/getTest', [ 'method' => 'get' ] ],
+    'totalAVG' => [ 'index/index/totalAVG', [ 'method' => 'get' ] ],
 ]);
 
